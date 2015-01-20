@@ -1,6 +1,78 @@
 @import "compass/reset";
 @import "compass/css3";
 
+$paper-white: rgb(255, 252, 247);
+$global-background: rgb(242, 239, 232);
+$global-blue: rgb(129, 169, 202);
+$line-color: rgb(244, 240, 235);
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+
 body {
-	font-size: 62.5%;
+  font-size: 62.5%;
+  background: $global-background;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.circled {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.squared {
+  border-radius: 0;
+  overflow: hidden;
+}
+.fixed {
+  position: fixed;
+}
+
+.white-paper {
+  background: $paper-white;
+  border-radius: 0;
+  border: 1px $paper-white solid;
+}
+
+.top-bar {
+  width: 100%;
+  height: 80px;
+
+  .header-icon {
+    @include size(40px,40px);
+    font-size: 18px;
+    transform: translate(50%,50%);
+    i {
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  .left-block {
+    @include size(85px, 100%);
+    border-right: 2px $line-color solid;
+    display: inline-block;
+    float: left;
+
+    .new-twit {
+      color: white;
+      background: $global-blue;
+    }
+  }
+  .right-block {
+    float: right;
+    width: 100%;
+    display: inline-block;
+    .header-icon {
+      border: 2px $line-color solid;
+    }
+  }
 }
