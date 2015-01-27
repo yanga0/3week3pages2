@@ -38,17 +38,19 @@ a, a:hover, a:visited {
 .white-paper {
   background: $paper-white;
   border-radius: 0;
-  border: 1px $paper-white solid;
+//  border: 2px $line-color solid;
 }
 
 .top-bar {
   width: 100%;
-  height: 80px;
+  height: 60px;
+  display: inline-block;
 
   .header-icon {
-    @include size(40px,40px);
+    display: inline-block;
+    @include size(36px,36px);
     font-size: 18px;
-    transform: translate(50%,50%);
+    margin: auto;
     i {
       position: relative;
       top: 10px;
@@ -56,8 +58,8 @@ a, a:hover, a:visited {
     }
   }
 
-  .left-block {
-    @include size(85px, 100%);
+  .new-twit-shortcut {
+    @include size(65px, 100%);
     border-right: 2px $line-color solid;
     display: inline-block;
     float: left;
@@ -67,12 +69,68 @@ a, a:hover, a:visited {
       background: $global-blue;
     }
   }
-  .right-block {
-    float: right;
-    width: 100%;
+  .operation-shortcuts {
     display: inline-block;
+    height: 100%;
     .header-icon {
       border: 2px $line-color solid;
     }
   }
+  .logo {
+    color: $global-blue;
+    font-size: 36px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 60px;
+  }
+
+  .search-and-user-info {
+    float: right;
+    .search-bar {
+      display: inline;
+      .search-input {
+        width: 175px;
+        padding: 0px 18px;
+        border: 1px $line-color solid;
+        border-radius: 18px;
+        line-height: 30px;
+      }
+    }
+    .user-info {
+      display: inline-block;
+      @include size(36px,36px);
+    }
+  }
+}
+
+.left {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  bottom: 0;
+  width: 23%;
+  min-width: 300px;
+  background: $global-blue;
+}
+
+.right {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  bottom: 0;
+  width: 23%;
+  min-width: 300px;
+  background: $paper-white;
+}
+
+.main {
+  width: 50%;
+  margin: 10px;
+  height: auto;
+  bottom: 0;
+  background: $paper-white;
+  margin-left: auto;
+  margin-right: auto;
 }
